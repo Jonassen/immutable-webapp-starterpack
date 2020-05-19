@@ -40,7 +40,7 @@ jobs:
           aws-region: eu-north-1
       - name: Copy assets to bucket
         run: >-
-          aws s3 cp build-${{github.sha}} s3://swagger-dagger-test-sky-asset/assets/${{github.sha}}/main.js --cache-control public,max-age=31536000,immutable
+          aws s3 cp build-${{github.sha}}/main.js s3://swagger-dagger-test-sky-asset/assets/${{github.sha}}/main.js --cache-control public,max-age=31536000,immutable
 
   upload-index:
     needs: upload-assets
